@@ -38,6 +38,6 @@ app.use((error, req, res, next) => {
 mongoose.connect(
 `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.0qwqp.mongodb.net/${process.env.MONGO_DEFAULT_DATABSE}?retryWrites=true&w=majority`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(result => {
-        app.listen(8080 || process.env.PORT);
+        app.listen(process.env.PORT || 8080 );
     }).catch(err => console.log(err))
 
